@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent  implements OnInit {
 
-  product_loaded: IProduct[] = [];
+  product_loaded!: IProduct[];
   iscloaded!: boolean;
 
   constructor(private productService: ProductService) { }
@@ -21,13 +21,17 @@ export class ProductListComponent  implements OnInit {
     //this.product_loaded;
   }
   getProduct() {
-    this.productService.getProduct().subscribe(product_loaded => {
-      this.product_loaded = product_loaded;
+    this.productService.getProduct().subscribe({
+      next: prod => this.product_loaded = prod,
+      error: err =>  console.log("see "+ err)
+     });
+  // (
       this.iscloaded = true;
-      // console.log('See companies '+this.product_loaded);
-    }, error => {
-      console.log(error);
-    });
+      console.log('See companies '+JSON.stringify(this.product_loaded));
+
+    // }, error => {
+    //   console.log("see "+error);
+    // })
   }
 
 

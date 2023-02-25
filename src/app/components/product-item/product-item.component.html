@@ -1,6 +1,13 @@
-<div style="margin-bottom: 40px">
+<div class="product-container">
 
-    <h3>{{ product_loaded.name }}</h3>
+  <img class="product-image" src="{{prod.url}}">
+  <p>{{ prod.name }}</p>
+  <p>{{ prod.price }}</p>
+  <select class="select-input" name="quantity" [(ngModel)]="quantity">
+    <option *ngFor="let q of quant" [ngValue]="q">{{q}}</option>
+  </select>
+  <!-- <input type="number" class="select-input"> -->
+  <button class="btn btn-primary" (click)="addToCart(prod.id,quantity,prod.price)">Add to Cart</button>
     
     <br>
   </div>

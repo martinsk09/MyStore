@@ -1,6 +1,5 @@
-<div class="col-md-6">
-    <app-product-item *ngFor="let pr of product_loaded">
+<div class="product-index">
 
-    </app-product-item>
-
+<app-product-item *ngFor="let pr of product_loaded" [prod]="pr" class="product-container">
+</app-product-item>
 </div>
