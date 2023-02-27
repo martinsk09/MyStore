@@ -15,9 +15,11 @@ export class CartService {
   addToCart(id:number,qt:number,product_price:number):ICart[]{
 
 
+    let price:any = qt*product_price;
+    price = price.toFixed(2);
     const cart: ICart = {
       product_id: id,
-      price: qt*product_price,
+      price: parseFloat(price),
       quantity: qt
     };
 

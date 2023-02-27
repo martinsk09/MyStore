@@ -1,8 +1,8 @@
 <div class="product-container">
 
-  <img class="product-image" src="{{prod.url}}">
+  <a routerLink="/product-detail/{{prod.id}}"><img class="product-image" src="{{prod.url}}">
   <p>{{ prod.name }}</p>
-  <p>{{ prod.price }}</p>
+  <p>{{ prod.price }}</p></a>
   <select class="select-input" name="quantity" [(ngModel)]="quantity">
     <option *ngFor="let q of quant" [ngValue]="q">{{q}}</option>
   </select>

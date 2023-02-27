@@ -10,7 +10,7 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 })
 export class ProductItemComponent implements OnInit {
 
-    @Input() prod: any;
+    @Input() prod!: IProduct;
 
     @Output() quant!: number[];
 added: number=0;
@@ -42,10 +42,11 @@ quantity:number=1;
     //  console.log('see q '+ds);
   }
   async addToCart(id:number,qt:number,product_price:number){
-    console.log('see id '+id+' see qt '+qt+' see amt '+this.prod.price);
+    // console.log('see id '+id+' see qt '+qt+' see amt '+this.prod.price);
    try{
     let cc = this.cartService.addToCart(id, qt, product_price);
-    console.log('Cart is now '+JSON.stringify(cc));
+    alert('Your item was added to the cart successfully!');
+    console.log('Cart is now: '+JSON.stringify(cc));
    } catch(err){
     console.log(err);
    }
