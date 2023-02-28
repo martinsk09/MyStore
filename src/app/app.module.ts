@@ -9,8 +9,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import { ProductListModule } from './components/product-list/product-list.module';
-
-
+import { ProductItemDetailModule } from './components/product-item-detail/product-item-detail.module';
+import { BootstrapIconsModule } from 'ng-bootstrap-icons';
+import { ArrowLeft, App, Bookmark } from 'ng-bootstrap-icons/icons';
+const icons = {
+  ArrowLeft
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,9 +23,11 @@ import { ProductListModule } from './components/product-list/product-list.module
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BootstrapIconsModule.pick(icons),
     NgbModule,
     HttpClientModule,
-    ProductListModule
+    ProductListModule,
+    ProductItemDetailModule
   ],
   providers: [],
   bootstrap: [AppComponent]

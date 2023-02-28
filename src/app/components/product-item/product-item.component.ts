@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { ProductService } from './../../services/product.service';
 import { CartService } from './../cart/cart.service';
 import { IProduct } from './../../models/IProduct';
 import { Component, Input, OnInit, Output } from '@angular/core';
@@ -15,7 +17,7 @@ export class ProductItemComponent implements OnInit {
     @Output() quant!: number[];
 added: number=0;
 quantity:number=1;
-  constructor(private cartService: CartService){
+  constructor(private cartService: CartService,private productService:ProductService,private router:Router){
     // this.prod=[{
     //   "id": 1,
     //   "name": "Book",
@@ -41,7 +43,7 @@ quantity:number=1;
     this.quant = ds;
     //  console.log('see q '+ds);
   }
-  async addToCart(id:number,qt:number,product_price:number){
+  async addToCart(id:any,qt:any,product_price:any){
     // console.log('see id '+id+' see qt '+qt+' see amt '+this.prod.price);
    try{
     let cc = this.cartService.addToCart(id, qt, product_price);
@@ -53,5 +55,9 @@ quantity:number=1;
   }
   updatedQuantity(qt:number){
     console.log(' see qt '+qt);
+  }
+  showProduct(product:any){
+    this.productService.getProductDetail(product);
+    this.router.navigate(['/product-detail/'+this.prod.id]);
   }
 }

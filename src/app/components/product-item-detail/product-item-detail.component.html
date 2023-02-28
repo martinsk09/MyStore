@@ -1,13 +1,21 @@
-<div class="detail-container">
-    
-<!-- <img class="product-image" src="{{prod.url}}">
-    <p>{{ prod.name }}</p>
-    <p>{{ prod.price }}</p>
+<div *ngIf="selectedProduct$ | async; let prod" class="detail-container">
+        <div class="col-md-6 text-end pe-5">
 
+    <img class="product-image" src="{{prod.url}}">
+        </div>
+        <div class="col-md-6">
+
+    <h3>{{ prod.name }}</h3>
+    <p>{{ prod.price | currency }}</p>
+
+    <p>{{prod.description}}</p>
     <select class="select-input" name="quantity">
         <option *ngFor="let q of quant" >{{q}}</option>
-      </select> -->
-    <!-- <input type="number" class="select-input"> -->
-    <button class="btn btn-primary" (click)="addToCart(prod.id,quantity,prod.price)">Add to Cart</button>
-      
+      </select>
+    <!-- <input type="number" class="select-input"> --><br>
+    <button class="btn btn-primary my-2 py-1" (click)="addToCart(prod.id,quantity,prod.price)">Add to Cart</button>
+    <br>
+    <a routerLink="/product-list" class="back-link"><bi name="arrow-left" class="bi bi-arrow-left" style="width: 1rem !important; display: -webkit-inline-box;"></bi> Back to Product List </a>
+        </div>
 </div>
+
