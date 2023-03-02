@@ -30,7 +30,7 @@ export class ProductItemDetailComponent implements OnInit {
     // if (this.selectedProduct$){
     // console.log('seed '+JSON.stringify(this.selectedProduct$));
     // }
-    console.log('seep '+this.prod);
+    // console.log('seep '+this.prod);
     this.quantity;
     this.setProductCount(10);
     // this.getProductItem();
@@ -50,12 +50,12 @@ setProductCount(num:number):void{
   this.quant = ds;
   //  console.log('see q '+ds);
 }
-  addToCart(id:any,qt:any,product_price:any){
+  addToCart(id:any,qt:any,product_price:any,product:IProduct){
     // console.log('see id '+id+' see qt '+qt+' see amt '+this.prod.price);
    try{
-    let cc = this.cartService.addToCart(id, qt, product_price);
+    let cc = this.cartService.addToCart(id, qt, product_price,product);
     alert('Your item was added to the cart successfully!');
-    console.log('Cart is now: '+JSON.stringify(cc));
+    // console.log('Cart is now: '+JSON.stringify(cc));
    } catch(err){
     console.log(err);
    }

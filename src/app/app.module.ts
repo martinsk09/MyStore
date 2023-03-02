@@ -1,3 +1,4 @@
+import { CartModule } from './components/cart/cart.module';
 // import { ProductItemComponent } from './components/product-item/product-item.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { NgModule } from '@angular/core';
@@ -27,7 +28,8 @@ const icons = {
     NgbModule,
     HttpClientModule,
     ProductListModule,
-    ProductItemDetailModule
+    ProductItemDetailModule,
+    CartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

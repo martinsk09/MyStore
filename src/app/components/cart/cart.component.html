@@ -1,4 +1,57 @@
 
 <div class="cart-container">
+    <div class="col-md-6">
+        
     
+        <div *ngFor="let cc of cart; let i = index">
+            
+            <div class="cart-item">
+
+                <img class="product-image" src="{{cc.product?.url}}">
+                <div class="cart-item-details">
+
+                    <h3> {{cc.product?.name}}</h3>
+                    <p>{{ cc.product?.price | currency }}</p>
+
+                    <!-- <select class="select-input" name="quantity" [value]="cc.quantity">
+                        <option *ngFor="let q of quant" value="{{q}}"[selected]="q === cc.quantity" >{{q}}</option>
+                    </select> -->
+
+            <input  name="quantity" class="form-control mt-2" (onchange)="checkQuantity($event,i)"  [value]="cc.quantity"type="number" required>
+                </div>
+                <br>
+            </div>
+            <br>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <form #form="ngForm" class="form-margin" (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+            <label for="fullname" class=" mt-2">Full name</label>
+            <input  name="fullname" class="form-control mt-2"  placeholder="(Minimum 3 Characters)" type="text" required  minlength="3"
+            [(ngModel)]="fullname"  >
+
+            </div>
+
+            <div class="form-group">
+            <label for="address" class=" mt-2">Address </label>                            
+            <textarea name="address"  placeholder="(Minimum 6 Characters)" class="form-control mt-2" required  minlength="6"  [(ngModel)]="address" ></textarea>
+
+            </div>
+
+            <div class="form-group">
+            <label for="card" class=" mt-2">Credit Card Number </label>    
+
+            <input  name="card" class="form-control mt-2"  placeholder="(16-digit Number)" type="text" required  minlength="16" [(ngModel)]="card">
+
+            </div>
+            <small>We'll never share your payment details with anyone else.</small>
+           
+            <div class=" mt-2">
+                <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Submit</button>
+            </div>
+
+        </form>
+    </div>
 </div>

@@ -27,7 +27,7 @@ export class ProductListComponent  implements OnInit {
      });
   // (
       this.iscloaded = true;
-      console.log('See companies '+JSON.stringify(this.product_loaded));
+      // console.log('See companies '+JSON.stringify(this.product_loaded));
 
     // }, error => {
     //   console.log("see "+error);

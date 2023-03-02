@@ -13,7 +13,7 @@
         <option *ngFor="let q of quant" >{{q}}</option>
       </select>
     <!-- <input type="number" class="select-input"> --><br>
-    <button class="btn btn-primary my-2 py-1" (click)="addToCart(prod.id,quantity,prod.price)">Add to Cart</button>
+    <button class="btn btn-primary my-2 py-1" (click)="addToCart(prod.id,quantity,prod.price,prod)">Add to Cart</button>
     <br>
     <a routerLink="/product-list" class="back-link"><bi name="arrow-left" class="bi bi-arrow-left" style="width: 1rem !important; display: -webkit-inline-box;"></bi> Back to Product List </a>
         </div>

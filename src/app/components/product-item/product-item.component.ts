@@ -36,19 +36,19 @@ quantity:number=1;
 
   setProductCount(num:number):void{
     let ds = [];
-    for (let ct = 0; ct <= num; ct++) {
+    for (let ct = 1; ct <= num; ct++) {
       //  this.quant.push(ct);
       ds.push(ct);
     }
     this.quant = ds;
     //  console.log('see q '+ds);
   }
-  async addToCart(id:any,qt:any,product_price:any){
+  async addToCart(id:any,qt:any,product_price:any,product:IProduct){
     // console.log('see id '+id+' see qt '+qt+' see amt '+this.prod.price);
    try{
-    let cc = this.cartService.addToCart(id, qt, product_price);
+    let cc = this.cartService.addToCart(id, qt, product_price,product);
     alert('Your item was added to the cart successfully!');
-    console.log('Cart is now: '+JSON.stringify(cc));
+    // console.log('Cart is now: '+JSON.stringify(cc));
    } catch(err){
     console.log(err);
    }

@@ -24,7 +24,7 @@ getProduct():Observable<IProduct[]> {
     this.selectedProductSubject.next(product);
 
 
-console.log('See pp. '+JSON.stringify(product));
+// console.log('See pp. '+JSON.stringify(product));
 
 
 }
