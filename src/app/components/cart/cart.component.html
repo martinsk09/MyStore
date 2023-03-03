@@ -19,10 +19,10 @@
                     <p>{{ cc.product?.price | currency }}</p>
 
                     <!-- <select class="select-input" name="quantity" [value]="cc.quantity">
-                        <option *ngFor="let q of quant" value="{{q}}"[selected]="q === cc.quantity" >{{q}}</option>
+                        <option *ngFor="let q of quant" value="{{q}}"[selected]="q === cc.quantity" >{{q}}</option>[value]="cc.quantity" 
                     </select> -->
 
-            <input  name="quantity" class="form-control mt-2" (change)="checkQuantity($event,i)"  [value]="cc.quantity"type="number" required>
+            <input  name="quantity" class="form-control mt-2"  [(ngModel)]="quantity[i]" (ngModelChange)="checkQuantity($event,i)"  type="number" required>
                 </div>
                 <br>
             </div>

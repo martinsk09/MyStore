@@ -18,6 +18,7 @@ export class CartComponent implements OnInit{
   total!:number;
   address!:string;
   fullname!:string;
+  quantity!: number[];
 
   constructor(private cartService:CartService, private router:Router){}
 
@@ -34,6 +35,12 @@ setProductCount(num:number):void{
     ds.push(ct);
   }
   this.quant = ds;
+  let qp = [];
+  for (let uq = 0; uq < this.cart.length; uq++) {
+    //  this.quant.push(uq);
+    qp.push(this.cart[uq].quantity||0);
+  }
+  this.quantity = qp;
   //  console.log('see q '+ds);
 }
   getCart(){
@@ -57,7 +64,8 @@ setProductCount(num:number):void{
 
   checkQuantity(a:any,i:any){
 
-    let ep = parseFloat(a.target.value);
+    // let ep = parseFloat(a.target.value);
+    let ep = this.quantity[i];
 
     if(ep == 0){
       alert('You have successfully removed ('+this.cart[i].product?.name+') from your cart.');

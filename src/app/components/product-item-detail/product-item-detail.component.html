@@ -9,7 +9,7 @@
     <p>{{ prod.price | currency }}</p>
 
     <p>{{prod.description}}</p>
-    <select class="select-input" name="quantity">
+    <select class="select-input" name="quantity" >
         <option *ngFor="let q of quant" >{{q}}</option>
       </select>
     <!-- <input type="number" class="select-input"> --><br>
