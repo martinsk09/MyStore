@@ -6,7 +6,12 @@
     </div>
     <div class="row">
         <div class="col">
-          <a  routerLink="/product-list">Product List</a> | <a  routerLink="/cart">Cart</a>
+          <a  routerLink="/product-list">Product List</a> | <a  routerLink="/cart" class="position-relative">Cart 
+            <!-- <span class="position-absolute top-0 start-100 translate-right ms-1 badge rounded-pill bg-danger">
+            {{total | currency}}
+            <span class="visually-hidden">Cart Price</span>
+          </span> -->
+        </a>
         </div>
       </div>
 </div>

@@ -1,6 +1,6 @@
 import { ProductService } from './../../services/product.service';
 import { IProduct } from './../../models/IProduct';
-import { CartService } from './../cart/cart.service';
+import { CartService } from '../../services/cart.service';
 import {ActivatedRoute, Params} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { map, Observable, of } from 'rxjs';

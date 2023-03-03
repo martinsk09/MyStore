@@ -4,6 +4,7 @@ export type ICart = {
     product?:IProduct;
     product_id?: number;
     price?: number;
+    total?: number;
     quantity?: number;
     fullname?: string;
     card?: string;

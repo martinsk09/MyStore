@@ -1,3 +1,4 @@
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './components/cart/cart.component';
@@ -10,7 +11,9 @@ const routes: Routes = [
   {path: 'product-list', component: ProductListComponent},
   {path: 'product-item', component: ProductItemComponent},
   {path: 'product-detail/:id', component: ProductItemDetailComponent},
-  {path: 'cart',component: CartComponent}];
+  {path: 'cart',component: CartComponent},
+  {path: 'order-confirmed',component: ConfirmationComponent},
+  {path: '**', redirectTo: '/'}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

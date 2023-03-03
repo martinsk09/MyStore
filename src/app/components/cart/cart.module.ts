@@ -15,7 +15,9 @@ import { CartComponent } from './cart.component';
     ReactiveFormsModule
   ],
   exports: [
-    CartComponent
+    CartComponent,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CartModule { }

@@ -1,1 +1,12 @@
-<p>confirmation works!</p>
+<div class="confirmation-container">
+
+    <div class="confirmation-items">
+ <!-- <angular-emojis [name]="'tada'" size="50"> </angular-emojis> -->
+        <h1 class="confirmation-header">Success! </h1>
+        <p>Thank you, <strong>{{order.name}}</strong></p>
+        <p>Your <strong>{{order.total | currency }}</strong> order is confirmed!</p>
+        <p>Please allow 1-3 business day(s) for shipping.</p>
+        <a routerLink="/" class="btn btn-primary">Back to product list</a>
+    </div>
+
+</div>

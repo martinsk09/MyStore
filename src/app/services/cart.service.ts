@@ -1,5 +1,5 @@
-import { IProduct } from './../../models/IProduct';
-import { ICart } from './../../models/ICart';
+import { IProduct } from '../models/IProduct';
+import { ICart } from '../models/ICart';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -9,6 +9,7 @@ export class CartService {
 
 
   orderCart: ICart[] = [];
+  order!:{};
   constructor() {
 
   }
@@ -30,5 +31,20 @@ export class CartService {
   }
   getCart():ICart[]{
     return this.orderCart;
+  }
+  confirmOrder(nm:string,cost:number){
+    this.orderCart[0].fullname = nm;
+    this.orderCart[0].total = cost;
+     this.order = {
+      name: nm,
+      total: cost
+    }
+
+    this.orderCart = [];
+    return this.order;
+    
+  }
+  getConfirmation(){
+    return this.order;
   }
 }
